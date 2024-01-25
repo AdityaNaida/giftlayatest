@@ -1,0 +1,469 @@
+/*Navigation*/
+.navbar{
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 10px 120px;
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+.logoHldr{
+    width: 220px;
+    display: inline-block;
+    margin-right: 100px;
+}
+.logoHldr > img{
+    height:auto;
+    width: 100%;
+}
+.locationOption{
+    background-image: url('/icons/location-pointer.svg'),url('/icons/down-chevron.svg');
+    background-repeat: no-repeat,no-repeat;
+    background-position: 15px,90%;
+    border-radius: 110px;
+    height: 50px;
+    padding: 15px 35px 15px 40px;
+    width: auto;
+    max-width: 250px;
+    outline: none;
+    text-align: center;
+    color: #1c2120;
+    letter-spacing: .05em;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.5em; 
+    font-family: inherit;
+}
+.searchContainer{
+    height: auto;
+    margin: 0em 3em 0em 2em;
+}
+.searchContainer > input{
+    padding: 10px 25px;
+    font-weight:500 ;
+    font-size: 1.6em;
+    color: var(--black);
+    border: none;
+    border-radius: 5px;
+    background: url('/icons/search-icon.svg') center right 15px no-repeat,var(--tilt-white) ;
+    padding-right: 5px;
+    width: 300px;
+    font-family: inherit;
+}
+
+.desktopLinks{
+    position: absolute;
+    right: 120px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
+
+.desktopLinks > a, .moreOptionBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.desktopLinks > a > span, .moreOptionBox > span{
+    color: var(--black);
+    font-weight: 500 ;
+    font-size: 1.5em;
+}
+.moreOptionBox{
+    position: relative;
+    cursor: pointer;
+}
+.moreOptionBoxLinks{
+    display: none;
+    position: absolute;
+    width: 300px;
+    background-color: var(--white);
+    z-index: 2;
+    top: 45px;
+    right: 0px;
+    height: auto;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+.moreOptionBoxLinks > a{
+   display: block;
+   padding: 10px;
+   font-weight: 500 ;
+   font-size: 1.6em; 
+   color: var(--black);
+   border-bottom: 1px solid rgba(0,0,0,0.1);
+   transition: all ease .5s;
+}
+.moreOptionBoxLinks > a:hover{
+    background-color: var(--tilt-white);
+}
+.moreOptionBoxLinks > a:last-child{
+    border-bottom: none;
+}
+.moreOptionBox:hover .moreOptionBoxLinks{
+    display: block;
+}
+
+.searchDiv{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    z-index: 4;
+}
+.searchDivBox{
+    width: 100vw;
+    background-color: var(--white);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    padding: 10px;
+}
+.searchDivBox > input[type=text]{
+    padding: 10px 25px;
+    font-weight:500 ;
+    font-size: 1.6em;
+    font-family: inherit;
+    color: var(--black);
+    border: none;
+    border-radius: 5px;
+    background: url('/icons/search-icon.svg') center right 15px no-repeat,var(--tilt-white) ;
+    padding-right: 5px;
+    width: 100%;
+    display: block;
+}
+
+.searchDivBox > div {
+    padding: 10px 0px;
+    margin: 1em 0em;
+}
+.searchDivBox > div > a{
+    padding: 7px 15px;
+    font-weight: 500 ;
+    font-size: 1.5em;
+    font-family: inherit;
+    color: var(--black);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin: .2em;
+}
+.searchBackdrop{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 2;
+}
+.searchBtn{
+    display: none !important;
+}
+.deliverLocation{
+    display: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.deliverLocationClick{
+    background-image: url('/icons/location-pointer.svg'),url('/icons/down-chevron.svg');
+    background-repeat: no-repeat,no-repeat;
+    background-position: 15px,90%;
+    border-radius: 110px;
+    height: auto;
+    padding: 7px 45px;
+    width: auto;
+    max-width: 250px;
+    outline: none;
+    text-align: center;
+    color: #1c2120;
+    letter-spacing: .05em;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.5em;
+    font-family: inherit;
+}
+.block{
+    display: none !important;
+}
+.menuBtn{
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+.dynamicLinks{
+    text-align: center;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.dynamicLinks2{
+    display: none;
+}
+.dynamicLinks > a{
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 400;
+    font-size: 1.6em;
+    font-family: inherit;
+    color: var(--black);
+    border-bottom: 2px solid var(--white);
+    transition: all ease .5s;
+} 
+.dynamicLinks > a:hover{
+    color: var(--website-theme);
+    border-color: var(--website-theme);
+}
+.menuBackdrop{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.3) ;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+.menuModal, .deliverModal{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+}
+.menuModal{
+    display: none;
+}
+.deliverLocationBox{
+    height: auto;
+    width: 30vw;
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+.deliverLocationHeading{
+    width: 100%;
+    background-color: var(--tilt-white);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+}
+.deliverLocationHeading > p{
+    color: var(--website-theme);
+    font-size: 2em;
+    font-weight: 600;
+}
+.locationOutput {
+    padding: 20px 10px;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+}
+.locationOutput > input[type=text]{
+    display: block;
+    width: 100%;
+    padding: 7px 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--black);
+    border-radius: 5px;
+    background: url('/icons/search-icon.svg') center right 15px no-repeat,var(--tilt-white) ;
+}
+.locationOutput > input[type=text] + p{
+    font-size: 1.5em;
+    margin-top: 1em;
+    font-weight: 400;
+    color: #282828;
+    font-family: inherit;
+    text-align: center;
+}
+/*Media Querries*/
+@media only screen and (max-width: 1400px){
+    .logoHldr{
+        margin-right: 30px;
+    }
+    .deliverLocationBox{
+        width: 50vw;
+    }
+}
+@media only screen and (max-width: 1250px){
+    .navbar{
+        padding: 10px 60px;
+    }
+    .searchContainer{
+        display: none;
+    }
+    .searchDiv , .searchBackdrop{
+        display: block;
+    }
+    .desktopLinks{
+        right: 60px;
+    }
+    .searchBtn{
+        display: block !important;
+    }
+    .deliverLocationBox{
+        width: 70vw;
+    }
+    .locationOption, .desktopLinks > a > span, .moreOptionBox > span{
+        display: none;
+    }
+ 
+}
+@media only screen and (max-width: 997px){
+    .navbar{
+        padding: 10px 30px;
+    }
+    .desktopLinks{
+        right: 30px;
+    }
+    .desktopLinks{
+        gap: 20px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .navbar{
+        padding: 10px;
+    }
+
+    .menuModal{
+        display: block;
+    }
+    .deliverLocation, .menuBtn{
+        display: block;
+    }
+    .desktopLinks{
+        right: 10px;
+    }
+    .dynamicLinks{
+        display: none;
+    }
+    .dynamicLinks2{
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        flex-wrap: wrap;
+        height: 100vh;
+        width: 90%;
+        text-align: left;
+        background-color: var(--white);
+        z-index: 4;
+        transition: all ease .5s;
+    }
+    .dynamicHeader{
+        width: 100%;
+        padding: 10px;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+    }
+    .dynamicFooter{
+        width: 100%;
+        margin-top: 10px;
+        background-color: var(--white);
+        padding: 10px 15px;
+    }
+    .dynamicFooter > a{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 1.5em;
+        color: #282828;
+        font-weight: 600;
+    }
+    .dynamicImgHldr{
+        padding: 5px;
+        border-radius: 50%;
+        background-color: var(--tilt-white);
+    }
+    .dynamicText{
+        margin-left: 10px;
+    }
+    .dynamicText > p{
+        font-weight: 600;
+        font-size: 2em;
+        color: #282828;
+    }
+    .dynamicText > p > span{
+        color: var(--website-theme);
+    }
+    .dynamicText > a{
+        font-weight:500 ;
+        font-size: 1.5em;
+        color: var(--website-theme);
+    }
+    .dynamicLinks2 > a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.1) ;
+        padding: 10px 25px;
+        font-weight: 400;
+        font-size: 1.6em;
+        font-family: inherit;
+        color: var(--black);
+        transition: all ease .5s;
+    }
+    .dynamicLinks2 > a:hover{
+        color: var(--website-theme);
+        border-color: var(--website-theme);
+    }
+    .block{
+        display: block !important;
+    }
+    .deliverLocationBox{
+        width: 90vw;
+    }
+}
+@media only screen and (max-width: 600px){
+    .desktopLinks > a > img, .moreOptionBox > img{
+        height: 25px;
+        width: 25px;
+    }
+    .contactAnchor{
+        display: none !important;
+    }
+    .logoHldr > img{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 450px){
+    .logoHldr > img{
+        width: 60%;
+    }
+    .desktopLinks{
+        gap: 15px;
+    }
+}

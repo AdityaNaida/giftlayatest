@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+}
+:root{
+  --white: #ffffff;
+  --dark-white: #ebebeb ;
+  --tilt-white: #edf0f4;
+  --black: #000000;
+  --website-theme: #135d54;
+}
+::selection{
+  background-color: var(--website-theme);
+  color: var(--white);
+}
+@media only screen and (max-width: 997px){
+  html{
+  font-size: 55%;
+}
+}
+@media only screen and (max-width: 767px){
+  html{
+  font-size: 45%;
+}
+}
